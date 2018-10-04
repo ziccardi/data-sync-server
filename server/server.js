@@ -36,7 +36,7 @@ class DataSyncServer {
   async initializeCore (config) {
     this.core = new Core(config.postgresConfig, makeExecutableSchema)
     this.models = await this.core.getModels()
-    this.models.sequelize.sync({ logging: false })
+    this.models.sync({ logging: false })
   }
 
   async initialize () {

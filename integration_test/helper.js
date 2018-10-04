@@ -17,7 +17,7 @@ function Helper () {
 
   this.syncService = new RestartableSyncService(config)
 
-  this.models = require('../sequelize/models/index')(postgresConfig)
+  this.models = require('../sequelize/models')
   this.sequelize = this.models.sequelize
 
   // see http://docs.sequelizejs.com/class/lib/query-interface.js~QueryInterface.html
