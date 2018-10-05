@@ -5,7 +5,7 @@ module.exports = {
     database: postgresConfig.database,
     username: postgresConfig.username,
     password: postgresConfig.password,
-    host: postgresConfig.host,
+    host: postgresConfig.options.host,
     dialect: 'postgres'
   }
 }

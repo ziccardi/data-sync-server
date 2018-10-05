@@ -48,9 +48,13 @@ const config = {
     database: process.env.POSTGRES_DATABASE || 'aerogear_data_sync_db',
     username: process.env.POSTGRES_USERNAME || 'postgresql',
     password: process.env.POSTGRES_PASSWORD || 'postgres',
-    host: process.env.POSTGRES_HOST || '127.0.0.1',
-    port: process.env.POSTGRES_PORT || '5432',
-    type: 'postgres'
+    options: {
+      host: process.env.POSTGRES_HOST || '127.0.0.1',
+      port: process.env.POSTGRES_PORT || '5432',
+      dialect: 'postgres',
+      operatorsAliases: false,
+      logging: false
+    }
   },
   pubsubConfig: {},
   securityServiceConfig: {
@@ -88,8 +92,8 @@ if (process.env.SCHEMA_LISTENER_CONFIG) {
       database: config.postgresConfig.database,
       user: config.postgresConfig.username,
       password: config.postgresConfig.password,
-      host: config.postgresConfig.host,
-      port: config.postgresConfig.port
+      host: config.postgresConfig.options.host,
+      port: config.postgresConfig.options.port
     }
   }
 
@@ -100,8 +104,8 @@ if (process.env.SCHEMA_LISTENER_CONFIG) {
       database: config.postgresConfig.database,
       username: config.postgresConfig.username,
       password: config.postgresConfig.password,
-      host: config.postgresConfig.host,
-      port: config.postgresConfig.port
+      host: config.postgresConfig.options.host,
+      port: config.postgresConfig.options.port
     }
   }
 }
