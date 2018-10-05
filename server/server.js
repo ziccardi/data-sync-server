@@ -29,8 +29,6 @@ class DataSyncServer {
 
     this.schema = null
     this.dataSources = null
-
-    this.initializeCore(config)
   }
 
   async initializeCore (config) {
@@ -40,6 +38,7 @@ class DataSyncServer {
   }
 
   async initialize () {
+    await this.initializeCore(this.config)
     this.server = http.createServer()
 
     // get some options

@@ -49,7 +49,8 @@ const config = {
     username: process.env.POSTGRES_USERNAME || 'postgresql',
     password: process.env.POSTGRES_PASSWORD || 'postgres',
     host: process.env.POSTGRES_HOST || '127.0.0.1',
-    port: process.env.POSTGRES_PORT || '5432'
+    port: process.env.POSTGRES_PORT || '5432',
+    type: 'postgres'
   },
   pubsubConfig: {},
   securityServiceConfig: {
